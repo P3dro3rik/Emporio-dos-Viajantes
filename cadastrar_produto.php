@@ -8,13 +8,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $preco = $_POST["preco"];
     $estoque = $_POST["estoque"];
     $raridade = $_POST["raridade"];
-    $imagem = $_POST["imagem"];
     $categoria_id = $_POST["categoria_id"];
 
     $sql = "INSERT INTO produtos
-            (nome, descricao, preco, estoque, raridade, imagem, categoria_id)
+            (nome, descricao, preco, estoque, raridade, categoria_id)
             VALUES
-            ('$nome', '$descricao', '$preco', '$estoque', '$raridade', '$imagem', '$categoria_id')";
+            ('$nome', '$descricao', '$preco', '$estoque', '$raridade', '$categoria_id')";
 
     mysqli_query($conn, $sql);
 
@@ -66,11 +65,6 @@ $categorias = mysqli_query($conn, "SELECT * FROM categorias");
         <option>Épico</option>
         <option>Lendário</option>
     </select>
-    <br><br>
-
-    <label>Imagem:</label>
-    <br>
-    <input type="text" name="imagem">
     <br><br>
 
     <label>Categoria:</label>

@@ -112,6 +112,18 @@ header {
         text-decoration: none;
         font-size: 0.9em;
     }
+.banner-restrito {
+    width: 100vw; /* Largura total da janela de visualização */
+    background-color: black; /* Fundo preto */
+    color: red; /* Texto vermelho */
+    text-align: center; /* Centralizar texto */
+    padding: 20px 0; /* Espaçamento vertical */
+    font-weight: bold; /* Negrito */
+    font-size: 24px; /* Tamanho da fonte */
+    position: relative; /* Ou fixed, se quiser que ele siga a rolagem */
+    left: 50%; /* Centralizar o banner */
+    transform: translateX(-50%);
+}
 </style>
 
 <body>
@@ -142,7 +154,6 @@ header {
                     <p><?= htmlspecialchars($produto['descricao']) ?></p>
                     <p>Raridade: <?= htmlspecialchars($produto['raridade']) ?></p>
                     <p>Preço: G <?= number_format($produto['preco'], 2, ',', '.') ?></p>
-                    
                     <?php if ($produto['estoque'] > 0) { ?>
                         <p>Estoque: <?= $produto['estoque'] ?> un.</p>
                         <a href="comprar.php?id=<?= $produto['id'] ?>">Requisitar para Retirada</a>
@@ -157,11 +168,21 @@ header {
             <p>Nenhum produto encontrado.</p>
         <?php } ?>
     </main>
-
+    
+    <center>
+    <hr>
     <footer>
         <br>
+        <br>
+        <br>
+        <br>
+        <br>
+  <div class="banner-restrito">ACESSO RESTRITO PARA ADM</div>
+</div>
+<br>
+<br>
         <a href="listar_produtos.php">Painel do Administrador</a>
     </footer>
-
+</center>
 </body>
 </html>

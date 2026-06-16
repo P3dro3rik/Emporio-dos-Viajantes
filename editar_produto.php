@@ -17,7 +17,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $preco = $_POST["preco"];
     $estoque = $_POST["estoque"];
     $raridade = $_POST["raridade"];
-    $imagem = $_POST["imagem"];
     $categoria_id = $_POST["categoria_id"];
 
     $sql = "UPDATE produtos SET
@@ -26,7 +25,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             preco='$preco',
             estoque='$estoque',
             raridade='$raridade',
-            imagem='$imagem',
             categoria_id='$categoria_id'
             WHERE id='$id'";
 
@@ -91,10 +89,6 @@ $categorias = mysqli_query($conn, "SELECT * FROM categorias");
 
     </select>
 
-    <br><br>
-
-    <input type="text" name="imagem"
-           value="<?= $produto['imagem'] ?>">
     <br><br>
 
     <select name="categoria_id">
