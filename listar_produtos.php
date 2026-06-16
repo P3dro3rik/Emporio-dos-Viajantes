@@ -14,6 +14,7 @@ $resultado = mysqli_query($conn, $sql);
 <head>
     <meta charset="UTF-8">
     <title>Produtos</title>
+    <link rel="stylesheet" href="admin.css">
 </head>
 <body>
 
@@ -63,6 +64,9 @@ $resultado = mysqli_query($conn, $sql);
     <?php } ?>
 
 </table>
-
+<footer>
+    <br>
+    <a href="index.php">Voltar</a>
+</footer>
 </body>
 </html>

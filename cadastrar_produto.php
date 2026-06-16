@@ -30,6 +30,7 @@ $categorias = mysqli_query($conn, "SELECT * FROM categorias");
 <head>
     <meta charset="UTF-8">
     <title>Cadastrar Produto</title>
+    <link rel="stylesheet" href="admin.css">
 </head>
 <body>
 
@@ -93,6 +94,9 @@ $categorias = mysqli_query($conn, "SELECT * FROM categorias");
     </button>
 
 </form>
-
+<footer>
+    <br>
+    <a href="listar_produtos.php">Voltar para Lista de Produtos</a>
+</footer>
 </body>
 </html>

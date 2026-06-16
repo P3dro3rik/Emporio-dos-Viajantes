@@ -1,0 +1,115 @@
+/* Estilos Gerais do Painel Admin */
+body {
+    font-family: 'Georgia', serif;
+    background-image: linear-gradient(rgba(26, 21, 18, 0.9), rgba(26, 21, 18, 0.9)), url('../imagens/fundo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #e6dfd3;
+    margin: 0;
+    padding: 30px;
+}
+
+h1, h2, h3 {
+    color: #c5a059; /* Dourado/Bronze Velho */
+    border-bottom: 1px solid #4a3b2c;
+    padding-bottom: 10px;
+}
+
+a {
+    color: #c5a059;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilização da Tabela de Listagem */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #2d2219; /* Fundo Pergaminho Escuro */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px dashed #5a4a3f; /* Bordas estilo costura */
+}
+
+th {
+    background-color: #1a1512; /* Topo da tabela mais escuro */
+    color: #ffd700; /* Destaque em ouro */
+}
+
+tr:hover {
+    background-color: #3d3024; /* Destaque sutil ao passar o mouse na linha */
+}
+
+/* Botões e Ações */
+.btn-cadastrar {
+    display: inline-block;
+    background-color: #2e4a23; /* Verde Heráldico */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.btn-editar {
+    color: #ffd700;
+}
+
+.btn-excluir {
+    color: #ff4d4d;
+}
+
+/* Formulários de Cadastro e Edição */
+form {
+    background-color: #2d2219;
+    border: 1px dashed #a1824a;
+    padding: 25px;
+    max-width: 500px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
+    border-radius: 4px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #a3854b;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    box-sizing: border-box; /* Garante que o padding não passe do limite do form */
+    background-color: #1a1512;
+    color: #e6dfd3;
+    border: 1px solid #5a4a3f;
+    padding: 10px;
+    font-family: inherit;
+    margin-bottom: 15px;
+}
+
+button[type="submit"] {
+    background-color: #8c2d19; /* Vermelho Escuro */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-weight: bold;
+    font-family: inherit;
+    cursor: pointer;
+    width: 100%;
+}
+
+button[type="submit"]:hover {
+    background-color: #a6351e;
+}
