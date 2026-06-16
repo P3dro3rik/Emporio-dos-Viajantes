@@ -141,7 +141,7 @@ header {
                     <h3><?= htmlspecialchars($produto['nome']) ?></h3>
                     <p><?= htmlspecialchars($produto['descricao']) ?></p>
                     <p>Raridade: <?= htmlspecialchars($produto['raridade']) ?></p>
-                    <p>Preço: R$ <?= number_format($produto['preco'], 2, ',', '.') ?></p>
+                    <p>Preço: G <?= number_format($produto['preco'], 2, ',', '.') ?></p>
                     
                     <?php if ($produto['estoque'] > 0) { ?>
                         <p>Estoque: <?= $produto['estoque'] ?> un.</p>

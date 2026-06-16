@@ -25,10 +25,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif ($quantidade > $produto['estoque'] || $quantidade <= 0) {
         $erro = "Quantidade indisponível no estoque!";
     } else {
-        // Gera o código único do pedido para apresentação na retirada
+        
         $codigo_pedido = "RET-" . strtoupper(bin2hex(random_bytes(4)));
         
-        // Atualiza e decrementa automaticamente o estoque físico
         mysqli_query($conn, "UPDATE produtos SET estoque = estoque - $quantidade WHERE id = $id");
 
         $sucesso = true;
@@ -71,7 +70,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         text-decoration: none;
     }
 
-    /* Alinha o formulário e o resumo lado a lado */
     .checkout-container {
         display: flex;
         flex-wrap: wrap;
@@ -79,7 +77,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         margin-top: 30px;
     }
 
-    /* Formatação dos campos do Formulário */
     form div {
         margin-bottom: 15px;
     }
@@ -100,7 +97,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         font-family: inherit;
     }
 
-    /* Botão de confirmação */
     button[type="submit"] {
         background-color: #8c2d19;
         color: white;
@@ -113,7 +109,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         max-width: 320px;
     }
 
-    /* Caixa de Resumo do Item */
     .resumo-box {
         background-color: #241c18;
         border: 1px dashed #c5a059;
@@ -122,7 +117,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         height: fit-content;
     }
 
-    /* Mensagens de Sucesso ou Erro */
     .sucesso-box {
         background-color: #1c2e1a;
         border: 1px solid #3e633a;
@@ -143,7 +137,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <a href="index.php">[ Voltar ao Catálogo ]</a>
         </div>
     <?php } else { ?>
-        <a href="index.php"><- Voltar ao Catálogo</a>
+        
         
         <?php if (!empty($erro)) echo "<p style='color:red;'>$erro</p>"; ?>
 
@@ -178,12 +172,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div>
                 <h3>Artefato Selecionado</h3>
                 <p><strong>Produto:</strong> <?= htmlspecialchars($produto['nome']) ?></p>
-                <p><strong>Preço Unitário:</strong> R$ <?= number_format($produto['preco'], 2, ',', '.') ?></p>
+                <p><strong>Preço Unitário:</strong> G <?= number_format($produto['preco'], 2, ',', '.') ?></p>
                 <p><strong>Estoque Disponível na Loja:</strong> <?= $produto['estoque'] ?> unidades</p>
-                <h4>Total a Pagar na Retirada: R$ <span id="total_exibicao"><?= number_format($produto['preco'], 2, ',', '.') ?></span></h4>
+                <h4>Total a Pagar na Retirada: G <span id="total_exibicao"><?= number_format($produto['preco'], 2, ',', '.') ?></span></h4>
             </div>
         </div>
     <?php } ?>
 
 </body>
+<a href="index.php"><- Voltar ao Catálogo</a>
 </html>

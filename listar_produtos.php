@@ -43,7 +43,7 @@ $resultado = mysqli_query($conn, $sql);
     <tr>
         <td><?= $produto['id'] ?></td>
         <td><?= $produto['nome'] ?></td>
-        <td>R$ <?= $produto['preco'] ?></td>
+        <td>G <?= $produto['preco'] ?></td>
         <td><?= $produto['estoque'] ?></td>
         <td><?= $produto['raridade'] ?></td>
         <td><?= $produto['categoria'] ?></td>
